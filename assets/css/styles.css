@@ -1,51 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
-
 /* Variables */
 :root {
-  --font-family: "Roboto", sans-serf;
-  --normal-font: 400;
-  --bolder-font: 900;
-  --bg-color: #f8f3f3;
-  --bg-color-secondary : #fff;
-  --primary-color: #7181FF;
-  --secondary-color: #FF9B47;
-  --primary-shadow:#0D0D0D;
-  --secondary-shadow: #A6A6A6;
-  --bottom-margin: 0.5rem;
-  --bottom-margin-2: 1rem;
-  --line-height: 1.7rem;
-  --transition: 0.3s;
-  --negrita: bold;
-}
-
-
-html {
-  scroll-behavior: smooth;
+  --bg-color1: #061A25;
+  --bg-color2: #262626;
+  --bg-color3: #D9D9D9;
+  --color-texto1: #f7f8fa;
+  --color-texto2:#FF7465;
+  --color-texto3: #FFEA2B;
+  --altura-de-linea: 1.3erm
 }
 
 /* CSS Resets */
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-ul {
-  list-style-type: none;
+ul, ol {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--color-texto1);
 }
 
 a:hover {
-  color: var( --secondary-color);
+  color: var( --color-texto3);
 }
 
+/*Configuración general*/
+
 body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
+  background-color: var( --bg-color1);
+  color: var(--color-texto1);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: var(--altura-de-linea);
+}
+
+strong {
+  color: var(--color-texto3) ;
 }
 
 /*Barra de navegación*/
@@ -58,44 +55,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  background-color: var(--bg-color);
-  box-shadow: 0 3px 5px var(--secondary-shadow);
-}
-
-nav h1 {
-  color: var(--secondary-color);
-}
-
-nav a {
-  color:  var(--primary-color);
-  transition: var(--transicion);
-}
-
-nav a:hover {
-  color: var( --secondary-color);
-  border-bottom: 2px solid var( --secondary-color);
+  padding: 0.5rem;
+  background-color: var(--bg-color2);
+  border-bottom: 1px solid var(--bg-color3);
+  box-shadow: 0 2px 15px 2px var(--bg-color3);
 }
 
 nav ul {
   display: flex;
-  gap: 1.9rem;
+  gap: 1rem;
 }
 
 nav ul li {
-  font-weight: var(--negrita);
+  font-weight: bold;
 }
-
-.menu-hamburguesa {
-  color: var(--primary-color);
-  font-size: 2rem;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  display: none;
-}
-
-
 
 /*sección presentación*/
 
@@ -103,212 +76,160 @@ nav ul li {
   display: flex;
   flex-wrap:wrap;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
+  justify-content: space-evenly;
+  height: 100vh;
 }
 
 .presentacion img {
-  height: 80%;
-  width: 25%;
+  height: 80vh;
+  width: 25vw;
 }
 
-.hola {
-  width: 25rem;
-  padding: 0.625rem;
+.presentacion div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  padding: 1rem;
   border-radius: 6px;
-  box-shadow: 4px 2px 15px 2px var(--primary-shadow);
-  background-color: var(--bg-color-secondary);
+  box-shadow: 4px 2px 15px 2px var(--bg-color3);
+  background-color: var(--bg-color2);
+  
 }
 
-.hola h3 {
-  margin-bottom: var(--bottom-margin);
+.presentacion  div p {
+  padding-top: 1rem ;
+  text-align: justify;
 }
 
-.hola p {
-  line-height: var(--line-height);
-  padding: 0.3rem 0;
+strong {
+  color: var(--color-texto3) ;
 }
 
-/*seccion mas sobre mi*/
 
-.mas-sobre{
-  box-shadow: 0px 2px 15px 2px var(--primary-shadow);
-  padding: 10%;
-  margin:4px ;
-}
+/*sección mas sobre mi*/
 
-.mas-sobre h2 {
-  margin-bottom: var(--bottom-margin);
+.sobreMi {
+  height: 100vh;
+  background-color: var(--bg-color2);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.mas-sobre p {
-  line-height: var(--line-height);
-  padding: 0.3rem;
+.sobreMi p {
+  text-align: justify;
+  width: 50vw;
+  padding-top: 1rem;
 }
 
 /*sección habilidades*/
 
-.contenedor-habilidad {
+.habilidades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
-  width: 100%;
-  height: 100%;
-  padding: 10%;
 }
 
-.contenedor-habilidad h2 {
-  margin: 10px;
+.icono-habilidades {
+  padding-top: 2rem;
 }
 
-.contenedor-habilidad img {
+.icono-habilidades img {
+  align-content: space-around;
   padding: 1.25rem;
-  width: 100px;
-  height: 100px;
-}
-
-.tarjeta-icono {
-  background-color: var(--bg-color-secondary);
+  width: 10vw;
+  height: 20vh;
+  background-color: var(--bg-color2);
   border-radius: 11px;
-  box-shadow: 0 3px 10px var(--secondary-shadow);
-  padding: 20px;
-  margin: 10px;
+  box-shadow: 4px 2px 15px 2px var(--bg-color3);
+  margin: 1rem;
 }
 
 /*Sección proyecto*/
 
-.proyectos {
-  background-color: var(--bg-color);
-  padding: 32px 0;
-  margin-top: 2rem;
-}
-
-.foto-de-proyecto {
-  width: 65%;
-  height: 60%;
-}
-
-.contenedor-de-proyectos {
+.proyectos{
+  height: 100vh;
+  background-color: var(--bg-color2);
   display: flex;
-  align-content: center;
+  flex-direction: column;
   align-items: center;
-  
+  justify-content: center;
 }
 
-.titulo-de-proyectos {
-  text-align: center;
+.proyectos h2 {
   margin-bottom: 1rem;
 }
 
-.contenedor-de-proyecto p {
-  padding: 0.4rem;
+.tarjeta-de-proyecto  {
+  display: flex;
 }
 
-.titulo-de-proyecto {
-  margin-bottom: var(--bottom-margin);
+.tarjeta-de-proyecto a {
+  color: var( --color-texto2);
 }
-
-.detalles-de-proyecto {
-  margin-bottom: var(--bottom-margin);
-}
-
-.tarjeta-de-proyecto {
+.tarjeta-de-proyecto div {
   text-align: center;
-  background-color: #fff;
+  background-color: var(--bg-color1);
   border-radius: 11px;
-  box-shadow: 0 3px 10px var(--primary-shadow);
-  padding: 20px;
-  margin: 10px;
-}
+  box-shadow: 4px 2px 15px 2px var(--bg-color3);
+  padding: 1.5rem;
+  margin: 1rem;
+ }
+
+ .tarjeta-de-proyecto img {
+  width: 20vw;
+  height: 20vh;
+ }
 
 /*Sección contactarme*/
 
-.contacto {
-  margin-top: 2rem;
-   
+.contactos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
 }
 
-.contacto h2 {
-  text-align: center;
-  margin-bottom: var(--bottom-margin-2);
-}
-
-.formulario-contacto-contenedor{
-  max-width: 40.75rem;
-  margin: 0 auto;
-  padding: 0.938rem;
-  border-radius: 5px;
-  box-shadow: 0 3px 10px var(--secondary-shadow);
-}
-
-.formulario-contacto label {
-  line-height: 2rem;
-  font-weight: var(--negrita);
-  color: var(--primary-color);
-}
-
-.formulario-contacto textarea {
-  min-height: 6.25rem;
-  font-size: 14px;
-}
-
-.formulario-contacto .input-field {
-  width: 95%;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 3px 10px var(--secondary-shadow);
-  font-size: 0.875rem;
-  outline: none;
-}
-
-.input-field::placeholder {
-  padding: 0.5rem;
-  color: var(--secundary-color);
-}
-
-.submit-btn {
-  width: 95%;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #fff;
-  font-weight: var(--negrita);
-  transition: var(--transition);
-  border: 3px solid var(--primary-color);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type="submit"]{
-  color: var(--primary-color);
-  font-size: 1.5rem;
-}
-
-input[type="submit"]:hover {
-  color: var(--secondary-color);; /* Cambia 'blue' al color que desees */
-}
-
-
-/*Sección sociales*/
-footer {
-  margin-top: 10px;
-}
-
-.sociales {
+.contactos div {
   display: flex;
   align-items: center;
-  justify-content: center;
- 
+  justify-content: space-evenly;
   
 }
 
-.socicon {
-  width: 2rem;
-  height: 2rem;
+.contactos img {
+  width: 10vw;
+  height: 20vh;
+  background-color: var(--bg-color2);
+  border-radius: 11px;
+  box-shadow: 4px 2px 15px 2px var(--bg-color3);
+  padding: 1.5rem;
+  margin: 2rem;
 }
 
-/*flecha arriba*/
-.flecha-arriba {
-  width: 3rem;
-  height: 3rem;
+/*Sección sociales*/
+
+footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 8vh;
+  background-color: var(--bg-color2);
+  border-top: 1px solid var(--bg-color3);
+  box-shadow: 2px 0 15px 2px var(--bg-color3);
+}
+
+footer img {
+  width: 3vw;
+  height: 5vh;
 }
